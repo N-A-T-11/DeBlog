@@ -1,0 +1,87 @@
+.interest-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0052D4, #000066);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .interest-title {
+    color: white;
+    font-size: 3.5rem;
+    font-family: "Cedarville Cursive", cursive;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .tags-container {
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 13px;
+    padding: 0 20px;
+  }
+  
+  .tag {
+    background-color: #E8E8E8;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 2rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: monospace;
+  }
+  
+  .tag:hover {
+    transform: scale(1.05);
+    background-color: #FFFFFF;
+  }
+  
+  .tag.art {
+    font-family: 'Satisfy', cursive;
+  }
+  
+  .tag.women {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .tag.books {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .selected {
+    background-color: #000066; /* Dark color for selected tags */
+    color: #fff;
+  }
+  
+  .continue-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 2rem;
+    background-color: #0052D4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: monospace;
+  }
+  
+  .continue-button:hover {
+    background-color: #003080;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .interest-title {
+      font-size: 2rem;
+    }
+    
+    .tag {
+      font-size: 2.4rem;
+      padding: 6px 16px;
+    }
+  }
