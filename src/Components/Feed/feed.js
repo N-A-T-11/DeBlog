@@ -1,4 +1,7 @@
-import React from 'react';
+// Feed.js
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Edit } from 'lucide-react';
 import './feed.css';
 import dish from '../images/dish.jpeg';
 import clevenat from '../images/clevenat.jpg';
@@ -7,9 +10,10 @@ import milkyway from '../images/milkyway.jpg';
 import jam from '../images/jam.JPG';
 import dir from '../images/ram beuaty.jpg';
 
-
-
 const Feed = () => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+
   const posts = [
     {
       id: 1,
@@ -49,10 +53,12 @@ const Feed = () => {
     }
   ];
 
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const NatLogo = () => (
-    <div className="nat-logo">NAT
-      {/* <imgages src="url: require('../images/thattan.jpg')" alt="NAT Logo" className="logo-image" /> */}
-    </div>
+    <div className="nat-logo">NAT</div>
   );
 
   const Card = ({ post }) => (
@@ -67,8 +73,29 @@ const Feed = () => {
 
   return (
     <div className="feed-container">
+      <div className="header">
+        <div className="search-write-container">
+          <div className="search-container">
+            <Search className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search memoirs..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
+          <button 
+            className="write-button"
+            onClick={() => navigate('/createBlog')}
+          >
+            <Edit className="write-icon" />
+            Write
+          </button>
+        </div>
+      </div>
       <div className="feed-grid">
-        {posts.map(post => (
+        {filteredPosts.map(post => (
           <Card key={post.id} post={post} />
         ))}
       </div>

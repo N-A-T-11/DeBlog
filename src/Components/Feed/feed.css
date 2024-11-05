@@ -1,89 +1,169 @@
+/* feed.css */
 .feed-container {
-    background-color: #0052D4;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
+  background: linear-gradient(to bottom, #0052D4, #000066);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+}
+
+.search-write-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.write-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #0052D4;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.write-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.write-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.feed-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.nat-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
   .feed-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .card {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    background: #000;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.02);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-  }
-  
-  .card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    color: white;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .nat-logo {
-    background-image: url('../images/forest.jpg');
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    /* background: white; */
-    border-radius: 50%;
-    padding: 5px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
-  /* Responsive layout */
-  @media (max-width: 1024px) {
-    .feed-grid {
       grid-template-columns: repeat(2, 1fr);
-    }
   }
-  
-  @media (max-width: 768px) {
-    .feed-grid {
+}
+
+@media (max-width: 768px) {
+  .feed-grid {
       grid-template-columns: 1fr;
-    }
   }
   
-  /* Different heights for cards */
-  .card.large {
-    grid-row: span 2;
+  .search-write-container {
+      flex-direction: column;
   }
   
-  .card.medium {
-    aspect-ratio: 1;
+  .search-container {
+      width: 100%;
   }
+}
+
+/* Different heights for cards */
+.card.large {
+  grid-row: span 2;
+}
+
+.card.medium {
+  aspect-ratio: 1;
+}
