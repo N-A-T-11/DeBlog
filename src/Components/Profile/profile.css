@@ -1,7 +1,12 @@
 /* Profile Container Styles */
+*{
+ margin: 0;
+ padding: 0;
+ border: 0; 
+}
 .profile-container {
   min-height: 100vh;
-  padding: 20px;
+  
 }
 
 /* Profile Content Layout */
@@ -136,14 +141,21 @@
   font-size: 18px;
 }
 
+.nav-bar > * {
+  margin: 0px 120px;
+
+}
+
 /* Navigation Bar */
-.navbar {
+.nav-bar {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  margin: 0;
+  border: 0;
+  padding: 0;
   justify-content: space-between;
-  background-color: #f8f8f8;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+  width: 100vw;
 }
 
 .site-logo {
@@ -154,6 +166,8 @@
   color: #333;
   cursor: pointer;
   text-decoration: none;
+  height: 80px;
+  width: 80px;
 }
 
 .write-button {
@@ -167,10 +181,28 @@
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
+  
 }
 
 .write-button-icon {
   margin-right: 8px;
+}
+
+.logo-container{
+  height: fit-content;
+  width: fit-content;
+}
+
+#edit {
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  left: 118px;
+  
+}
+#editimg{
+  height: 26px;
+  width: 26px;
 }
 
 /* Responsive Design */

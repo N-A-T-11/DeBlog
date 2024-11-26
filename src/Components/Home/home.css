@@ -6,9 +6,18 @@
   
   .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 15px;
     gap: 15px;
+  }
+
+  .logo-container {
+    flex-shrink: 0;
+  }
+  .site-logo {
+    height: 80px;
+    width: 50px;
+    object-fit: contain;
   }
   
   .login-btn {
@@ -19,6 +28,7 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
   
   .signup-btn {
     padding: 8px 20px;
@@ -28,6 +38,11 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .login-btn,.signup-btn {
+  margin-left: auto; /* Push buttons to the right */
+}
+
   
   .title {
     text-align: center;

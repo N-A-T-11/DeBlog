@@ -1,28 +1,29 @@
 import React from 'react';
+import { Cloudinary } from '@cloudinary/url-gen';
 import { useNavigate } from 'react-router-dom';
 
 import './home.css';
-import Thattan from '../images/Thattan.JPG';
+
 
 const Home = () => {
   const navigate = useNavigate();
 
   const images = [
-    { id: 1, url: Thattan, alt: "Nature 1" },
-    { id: 2, url: require('../images/waterwall.jpg'), alt: "Landscape 1" },
-    { id: 3, url: require('../images/forest.jpg'), alt: "Forest" },
-    { id: 4, url: require('../images/vandisai.JPG'), alt: "Adventure" },
-    { id: 5, url: require('../images/sai.JPG'), alt: "Nature 2" },
-    { id: 6, url: require('../images/clevenat.jpg'), alt: "Portrait" },
-    { id: 7, url: require('../images/dish.jpeg'), alt: "Night sky" },
-    { id: 8, url: require('../images/natlogo.jpeg'), alt: "Typography" },
-    { id: 9, url: require('../images/Bennett outlook.jfif'), alt: "Landscape 2" },
-    { id: 10, url: require('../images/ritu.jpg'), alt: "Rit"},
-    { id: 11, url: require('../images/ram beuaty.jpg'), alt: "Beauty" },
-    { id: 12, url: require('../images/Vaanam.jpg'), alt: "Sunset" },
-    { id: 13, url: require('../images/moon.jpg'), alt: "Moon" },
-    { id: 14, url: require('../images/milkyway.jpg'), alt: "Stars" },
-    { id: 14, url: require('../images/motamadi.jpg'), alt: "Stars" },
+    { id: 1, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453620/Deblog/Thattan.jpg', alt: "Nature 1" },
+    { id: 2, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453629/Deblog/Waterfall.jpg', alt: "Landscape 1" },
+    { id: 3, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453604/Deblog/forest.jpg', alt: "Forest" },
+    { id: 4, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453627/Deblog/Travel.jpg', alt: "Adventure" },
+    { id: 5, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453630/Deblog/sai.jpg', alt: "Nature 2" },
+    { id: 6, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453591/Deblog/monanisa.jpg', alt: "Portrait" },
+    { id: 7, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453593/Deblog/Terrace.jpg', alt: "Night sky" },
+    { id: 8, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453611/Deblog/Nat.jpg', alt: "Typography" },
+    { id: 9, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453612/Deblog/Bennettoutlok.jpg', alt: "Landscape 2" },
+    { id: 10, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453613/Deblog/Ritu.jpg', alt: "Rit"},
+    { id: 11, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453610/Deblog/ram.jpg', alt: "Beauty" },
+    { id: 12, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453619/Deblog/vaanam.jpg', alt: "Sunset" },
+    { id: 13, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453606/Deblog/moon.jpg', alt: "Moon" },
+    { id: 14, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453697/Deblog/milkyway.jpg', alt: "Stars" },
+    { id: 15, url: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453594/Deblog/Jama.png', alt: "Jama" },
   ];
 
   // Function to handle MetaMask login
@@ -47,6 +48,9 @@ const Home = () => {
   return (
     <div className="container">
       <nav className="nav">
+        <div className="logo-container">
+          <img src="https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453591/Deblog/Deblog.png" alt="Site Logo" className="site-logo" />
+        </div>
         <button className="login-btn">LOGIN</button>
         <button className="signup-btn"  onClick={handleMetaMaskLogin}>SIGN UP</button>
       </nav>

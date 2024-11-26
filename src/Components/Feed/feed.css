@@ -11,7 +11,24 @@
   padding: 0 20px;
 }
 
+.logo-search-write-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.site-logo {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+}
+
 .search-write-container {
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,6 +89,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Rest of the existing CSS remains the same */
 .write-icon {
   width: 18px;
   height: 18px;
@@ -141,21 +159,30 @@
 /* Responsive layout */
 @media (max-width: 1024px) {
   .feed-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .logo-search-write-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .logo-container {
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
   .feed-grid {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   
   .search-write-container {
-      flex-direction: column;
+    flex-direction: column;
   }
   
   .search-container {
-      width: 100%;
+    width: 100%;
   }
 }
 

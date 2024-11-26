@@ -2,13 +2,8 @@ import React from 'react';
 import './profile.css';
 import { useNavigate } from 'react-router-dom'; // Ensure react-router-dom is installed and used
 
-import iris from '../images/iris.JPG';
-import dir from '../images/ram beuaty.jpg';
-import Jam from '../images/jam.JPG';
-import clevenat from '../images/clevenat.jpg';
-import femit from '../images/femii.png';
-import jama from '../images/Jama.png';
-import logo from '../images/logo.png'; // Add site logo image
+import logo from '../images/de.png'; // Add site logo image
+import edit from '../images/edit.png'; 
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -29,27 +24,27 @@ const Profile = () => {
   const memoirs = [
     {
       title: 'Beauty of Beauty',
-      image: dir,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453610/Deblog/ram.jpg',
     },
     {
       title: 'Feminine Body to an extent',
-      image: femit,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453593/Deblog/feminine.png',
     },
     {
       title: 'Journey of iris and the pupil',
-      image: iris,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453633/Deblog/iris.jpg',
     },
     {
       title: 'The History of Jama -part Elevazhan',
-      image: jama,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453594/Deblog/Jama.png',
     },
     {
       title: 'Jamming the Jam Theory',
-      image: Jam,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453631/Deblog/Jam.jpg',
     },
     {
       title: 'Nat being Naughty',
-      image: clevenat,
+      image: 'https://res.cloudinary.com/dmoiluzh8/image/upload/v1732453591/Deblog/monanisa.jpg',
     },
   ];
 
@@ -58,7 +53,11 @@ const Profile = () => {
       {/* Navigation Bar */}
       <nav className="nav-bar">
         <div className="logo-container">
-          <img src={logo} alt="Site Logo" className="site-logo" />
+          <img src={logo}
+               alt="Site Logo" 
+               className="site-logo" 
+               onClick={() => navigate('/feed')}/>
+          
         </div>
         <button onClick={handleWriteButtonClick} className="write-button">
           <i className="fas fa-pen"></i> Write
@@ -68,6 +67,9 @@ const Profile = () => {
       <div className="profile-content">
         {/* Profile Card */}
         <div className="profile-card">
+          <div id="edit"> 
+            <img id="editimg" src={edit} alt="edit" ></img>
+          </div>
           <div className="profile-image-container">
             <img
               src="https://img.atlasobscura.com/Pa2OCKmKLrmT4tiiauh-_1k3efxBn-jzb2sm9kTUPjY/rs:fill:12000:12000/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy85ZDUyZjcxNGU1/ZGE4MzU3YTZfTWFy/eS1CYWdvdC5qcGc.jpg"
